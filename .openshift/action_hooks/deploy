@@ -13,7 +13,7 @@ then
 	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.truckpoints.ensureIndex( { pos : "2d" } );'
 	echo "Data imported"
 else
-	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.truckpoints.ensureIndex( { pos : "2d" } );'
+	#mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.truckpoints.ensureIndex( { pos : "2d" } );'
 	echo "Data already present...Not importing"
 
 fi
