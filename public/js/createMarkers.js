@@ -56,9 +56,10 @@ function addPins(data)
 	{
 		markerArray[i] = L.marker([data[i].pos[1], data[i].pos[0]]);
 		//replace colons with commas in sidebar
-		var foodMod = data[i].fooditems.split(':').join(',');
+		if (!data[i].fooditems) break;
+			var foodModOne = data[i].fooditems.split(':').join(',');
 		$("#trucklist .items").append('<div class="item"><strong>' + data[i].applicant + '</strong><p class="info">' 
-		+ foodMod + '</p></div>');
+		+ foodModOne + '</p></div>');
 	}
 	var group = new L.featureGroup(markerArray);
 	//fit the markers and popup to screen
@@ -67,8 +68,9 @@ function addPins(data)
 	for (var i = 0; i < numMarkers; i++)
 	{
 		//replaces colons with commas in food list
-		var foodMod = data[i].fooditems.split(':').join(',');
-		var content = '<div class="item"><strong>' + data[i].applicant + "</strong>" + ": " + foodMod + '</div>';
+		if (!data[i].fooditems) break;
+		var foodModTwo = data[i].fooditems.split(':').join(',');
+		var content = '<div class="item"><strong>' + data[i].applicant + "</strong>" + ": " + foodModTwo + '</div>';
 		for (var j = i; j < numMarkers; j++)
 		{
 			//in case multiple food trucks at same location, append to popup
