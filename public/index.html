@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Grub Truck</title> 
+  	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="l.geosearch.css" />
+		
+	<!--[if lte IE 8]>
+    	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+	<![endif]-->
+	<script src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Nosifer' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo:600' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" />
+	<link rel="stylesheet" href="main.css" />
+</head>
+<body>
+
+	<div id="trucklist">
+	    <h1 id="title">Grub Truck</h1>
+       <div class="items">
+          <div class="items hello">
+              Type in the search input box to the left to look for the 10 nearest food trucks to you! Note that some trucks may be in the same location. The sidebar will show you all the trucks sorted by distance...
+          </div>
+       </div>
+	</div>
+	<div id="mapcontainer">
+		<div id="map"></div>
+	</div>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script> 
+	
+	<script src="l.control.geosearch.js"></script>
+	<script src="l.geosearch.provider.openstreetmap.js"></script>
+	
+	
+	<script type='text/javascript' src='truckcoord.json'></script>
+	<script type='text/javascript' src='createMarkers.js'></script>
+</body>
+</html>
+

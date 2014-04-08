@@ -1,0 +1,19 @@
+#!/bin/bash
+
+dbsize=$(mongo -quiet $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME -u  $OPENSHIFT_MONGODB_DB_USERNAME -p  $OPENSHIFT_MONGODB_DB_PASSWORD --eval "db.truckpoints.count()")
+
+#If no documents exist in truckpoints then we import the data (first time)
+if [[ $dbsize =~ "0" ]]
+then
+	#import the data
+	mongoimport --jsonArray -d $OPENSHIFT_APP_NAME -c truckpoints --type json --file $OPENSHIFT_REPO_DIR/truckcoord.json  -h $OPENSHIFT_MONGODB_DB_HOST --port $OPENSHIFT_MONGODB_DB_PORT -u admin -p $OPENSHIFT_MONGODB_DB_PASSWORD
+	
+
+	#make the 2D index
+	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.truckpoints.ensureIndex( { pos : "2d" } );'
+	echo "Data imported"
+else
+	mongo $OPENSHIFT_MONGODB_DB_HOST:$OPENSHIFT_MONGODB_DB_PORT/$OPENSHIFT_APP_NAME --eval 'db.truckpoints.ensureIndex( { pos : "2d" } );'
+	echo "Data already present...Not importing"
+
+fi
