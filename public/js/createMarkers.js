@@ -47,6 +47,8 @@ function getTrucks(result)
 //actually adds the pins to the map along with the popups and basic event-handling
 function addPins(data)
 {
+	//checks for locations that don't have food items defined
+	//var noFood = false;
 	//remove previous markers and sidebar
 	map.removeLayer(markerLayerGroup);
 	$("#trucklist .items").html('');
@@ -56,11 +58,16 @@ function addPins(data)
 	{
 		markerArray[i] = L.marker([data[i].pos[1], data[i].pos[0]]);
 		//replace colons with commas in sidebar
-		if (typeof data[i].fooditems === 'undefined') break;
-			var foodModOne = data[i].fooditems.split(':').join(',');
+		if (typeof data[i].fooditems === 'undefined')
+		{
+			i--;
+			continue;
+		}
+		var foodModOne = data[i].fooditems.split(':').join(',');
 		$("#trucklist .items").append('<div class="item"><strong>' + data[i].applicant + '</strong><p class="info">' 
 		+ foodModOne + '</p></div>');
 	}
+
 	var group = new L.featureGroup(markerArray);
 	//fit the markers and popup to screen
 	map.fitBounds(group.getBounds().pad(0.5));
