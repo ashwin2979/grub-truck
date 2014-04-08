@@ -35,8 +35,6 @@ On the front-end, I use jQuery to handle interfacing with the routes and extract
 
 ---
 
-Basic(due to time) testing of the JS code is implemented through Mocha and Chai.
-
 Some tradeoffs I made were choosing Leaflet as a lightweight and less feature-packed alternative to industry options such as Google Maps. I also focused a large amount on the front-end visual experience and haven't needed other links so I chose not to use a framework for organization.
 Given more time, I would implement many additional features. To name a few I would allow the user to indicate the number of trucks to display, provide a search-box for looking up food keywords, and pull the hours of service in the back-end.
 
