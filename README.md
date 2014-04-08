@@ -4,7 +4,7 @@ This web app is designed to show the SF food trucks in proximity to a specific l
 
 ## Live App:
 
-grub-truck.rhcloud.com
+[Grub Truck](http://grub-truck.rhcloud.com/)
 
 ## Libraries, Tools, and Frameworks Utilized:
 
