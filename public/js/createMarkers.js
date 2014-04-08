@@ -56,7 +56,7 @@ function addPins(data)
 	{
 		markerArray[i] = L.marker([data[i].pos[1], data[i].pos[0]]);
 		//replace colons with commas in sidebar
-		if (!data[i].fooditems) break;
+		if (typeof data[i].fooditems === 'undefined') break;
 			var foodModOne = data[i].fooditems.split(':').join(',');
 		$("#trucklist .items").append('<div class="item"><strong>' + data[i].applicant + '</strong><p class="info">' 
 		+ foodModOne + '</p></div>');
@@ -68,7 +68,7 @@ function addPins(data)
 	for (var i = 0; i < numMarkers; i++)
 	{
 		//replaces colons with commas in food list
-		if (!data[i].fooditems) break;
+		if (typeof data[i].fooditems === 'undefined') break;
 		var foodModTwo = data[i].fooditems.split(':').join(',');
 		var content = '<div class="item"><strong>' + data[i].applicant + "</strong>" + ": " + foodModTwo + '</div>';
 		for (var j = i; j < numMarkers; j++)
