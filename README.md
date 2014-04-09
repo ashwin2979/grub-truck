@@ -30,7 +30,7 @@ Grub Truck stores the food trucks in a MongoDB collection. I decided to go with 
 
 NodeJS runs the server, which handles the database setup and calls. In the back-end, I expose a RESTful API that renders JSON based on search parameters of the user and their resultant queries on the database. I deliver these routes through the Express framework and use Connect for parsing. 
 
-On the front-end, I use jQuery to handle interfacing with the routes and extracting the necessary data from the back-end. The map itself uses the lightweight Leaflet library, which handles all the map and marker rendering from public/createMarkers.js. I use a Geo-search library to identify locations on the map, which is implemented through OpenStreetMap. Some CSS is in place for design elements (fonts, sizing, and spacing).
+On the front-end, I use jQuery to handle interfacing with the routes and extracting the necessary data from the back-end. The map itself uses the lightweight Leaflet library, which handles all the map and marker rendering from public/js/createMarkers.js. I use a Geo-search library to identify locations on the map, which is implemented through OpenStreetMap. Some CSS is in place for design elements (fonts, sizing, and spacing).
 
 ---
 
