@@ -39,6 +39,8 @@ Given more time, I would implement many additional features. To name a few I wou
 
 I have some basic tests and validation scripts in the utilities folder, but I would definitely implement a more exhaustive testing approach with more time allocated.
 
+I have not had prior experience with MongoDB or with a mapping library, and so this was an exploration for developing with some new technologies that seemed most appropriate for this app. 
+
 ---
 
 Something else I'm especially proud of is a web app I built called [EventYoda](https://eventyoda.com/). This is a platform to find unique and creative team-building activities targeted specifically for corporate groups. I've presented this at a few tech conferences and also looked into some monetization strategies- its been a fun and fulfilling learning experience.
