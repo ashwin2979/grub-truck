@@ -44,5 +44,3 @@ I have not had prior experience with MongoDB or with a mapping library, and so t
 ---
 
 Something else I'm especially proud of is a web app I built called [EventYoda](https://eventyoda.com/). This is a platform to find unique and creative team-building activities targeted specifically for corporate groups. I've presented this at a few tech conferences and also looked into some monetization strategies- its been a fun and fulfilling learning experience.
-
-## Resume: https://db.tt/JFcej9qM.
